@@ -13,7 +13,7 @@ namespace BarcodePOC
 		{
 			InitializeComponent();
 
-			MainPage = new BarcodePOC.MainPage();
+            MainPage = new NavigationPage(new BarcodePOC.MainPage());
 		}
 
 		protected override void OnStart ()

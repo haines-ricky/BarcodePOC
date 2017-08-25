@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using ZXing.Net.Mobile.Forms;
 
+
 namespace BarcodePOC
 {
 	public partial class MainPage : ContentPage
@@ -29,9 +30,20 @@ namespace BarcodePOC
                     DisplayAlert("Scanned Barcode", result.Text, "OK");
                 });
             };
+            
 
             // Navigate to our scanner page
-            await Navigation.PushAsync(scanPage);
+            try
+            {
+                await Navigation.PushAsync(scanPage);
+            }
+            catch (Exception ex){
+                await this.DisplayAlert(
+                    "Error",
+                    "Exception: "+ex.Message,
+                    "Ok!");
+            }
+
         }
 
         async void TestButton(object sender, EventArgs e)

@@ -16,7 +16,7 @@
         <Button Text="Scan Barcode"
             HorizontalOptions="Center"
             VerticalOptions="End"
-            Clicked="TestButton"/>
+            Clicked="OnScanRequest"/>
     </StackLayout>
 
 
